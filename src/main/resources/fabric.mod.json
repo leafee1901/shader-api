@@ -3,13 +3,13 @@
 	"id": "shader_api",
 	"version": "${version}",
 	"name": "Shader API",
-	"description": "This is an API made to make post processing easier to use for silly me.",
+	"description": "This is an API made to make post processing shaders easier to use for silly me.",
 	"authors": [
 		"leafee"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/leafee1901/shader-api"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/shader_api/icon.png",

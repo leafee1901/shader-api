@@ -3,7 +3,8 @@
 	"package": "net.leafee.shader_api.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ExampleMixin"
+		"WindowMixin",
+		"GameRendererMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
