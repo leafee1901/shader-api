@@ -15,7 +15,7 @@
 	"icon": "assets/shader_api/icon.png",
 	"environment": "*",
 	"entrypoints": {
-		"main": [
+		"client": [
 			"net.leafee.shader_api.ShaderAPI"
 		],
 		"fabric-datagen": [

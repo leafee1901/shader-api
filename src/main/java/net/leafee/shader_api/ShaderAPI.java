@@ -1,5 +1,6 @@
 package net.leafee.shader_api;
 
+import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
@@ -12,36 +13,49 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
-public class ShaderAPI implements ModInitializer {
+public class ShaderAPI implements ClientModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger("shader_api");
 
-	//blobs2 = id:2, name:blobs2
-
 	@Override
-	public void onInitialize() {
+	public void onInitializeClient() {
 
-		KeyBinding enableKey = KeyBindingHelper.registerKeyBinding(new KeyBinding("enable", InputUtil.GLFW_KEY_F7, "shader api"));
-		KeyBinding disableKey = KeyBindingHelper.registerKeyBinding(new KeyBinding("disable", InputUtil.GLFW_KEY_F8, "shader api"));
+		ShaderList.registerPostShader("blobs2");
+		ShaderList.registerPostShader("neurosis");
+
+		KeyBinding neurosisKey = KeyBindingHelper.registerKeyBinding(new KeyBinding("neurosis", InputUtil.GLFW_KEY_F6, "shader api"));
+		KeyBinding blobs2Key = KeyBindingHelper.registerKeyBinding(new KeyBinding("blobs2", InputUtil.GLFW_KEY_F7, "shader api"));
+		KeyBinding disableAllKey = KeyBindingHelper.registerKeyBinding(new KeyBinding("disableAll", InputUtil.GLFW_KEY_F8, "shader api"));
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			if (client.player != null) {
-				if (enableKey.wasPressed()) {
+				if (neurosisKey.wasPressed()) {
+					if (!ShaderRenderer.hasRegistered) {
+						ShaderList.finalizeRegisterPostShader();
+					}
 
-					ShaderList.postShaderList.clear();
-					ShaderList.registerPostShader("blobs2");
-					ShaderList.registerPostShader("neurosis");
-					LOGGER.info(String.valueOf(ShaderList.postShaderList));
-					ShaderRenderer.set("neurosis", true);
-					ShaderRenderer.set("blobs2", true);
+					if (ShaderRenderer.isEnabled("neurosis")) {
+						ShaderRenderer.set("neurosis", false);
+					} else {
+						ShaderRenderer.set("neurosis", true);
+					}
 				}
-				if (disableKey.wasPressed()) {
 
-					ShaderList.postShaderList.clear();
-					ShaderList.registerPostShader("blobs2");
-					ShaderList.registerPostShader("neurosis");
-					LOGGER.info(String.valueOf(ShaderList.postShaderList));
-					ShaderRenderer.set("neurosis", false);
-					ShaderRenderer.set("blobs2", false);
+				if (blobs2Key.wasPressed()) {
+					if (!ShaderRenderer.hasRegistered) {
+						ShaderList.finalizeRegisterPostShader();
+					}
+
+					if (ShaderRenderer.isEnabled("blobs2")) {
+						ShaderRenderer.set("blobs2", false);
+						LOGGER.info("disable");
+					} else {
+						ShaderRenderer.set("blobs2", true);
+						LOGGER.info("enable");
+					}
+				}
+
+				if (disableAllKey.wasPressed()) {
+					ShaderRenderer.disableAll();
 				}
 			}
 		});
