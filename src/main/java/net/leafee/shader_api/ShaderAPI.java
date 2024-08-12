@@ -20,28 +20,28 @@ public class ShaderAPI implements ModInitializer {
 	@Override
 	public void onInitialize() {
 
-		KeyBinding toggleKey = KeyBindingHelper.registerKeyBinding(new KeyBinding("toggle", InputUtil.GLFW_KEY_F7, "shader api"));
+		KeyBinding enableKey = KeyBindingHelper.registerKeyBinding(new KeyBinding("enable", InputUtil.GLFW_KEY_F7, "shader api"));
+		KeyBinding disableKey = KeyBindingHelper.registerKeyBinding(new KeyBinding("disable", InputUtil.GLFW_KEY_F8, "shader api"));
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			if (client.player != null) {
-				if (toggleKey.wasPressed()) {
+				if (enableKey.wasPressed()) {
 
 					ShaderList.postShaderList.clear();
 					ShaderList.registerPostShader("blobs2");
 					ShaderList.registerPostShader("neurosis");
 					LOGGER.info(String.valueOf(ShaderList.postShaderList));
+					ShaderRenderer.set("neurosis", true);
+					ShaderRenderer.set("blobs2", true);
+				}
+				if (disableKey.wasPressed()) {
 
-
-					if (ShaderRenderer.postShaderEnabled) {
-						ShaderRenderer.shader.close();
-						ShaderRenderer.postShaderEnabled = false;
-					} else {
-						ShaderRenderer.postShaderEnabled = true;
-						ShaderRenderer.set("neurosis", true);
-						ShaderRenderer.set("blobs2", true);
-						LOGGER.info("toggled post shader");
-					}
-
+					ShaderList.postShaderList.clear();
+					ShaderList.registerPostShader("blobs2");
+					ShaderList.registerPostShader("neurosis");
+					LOGGER.info(String.valueOf(ShaderList.postShaderList));
+					ShaderRenderer.set("neurosis", false);
+					ShaderRenderer.set("blobs2", false);
 				}
 			}
 		});

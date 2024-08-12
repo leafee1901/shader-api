@@ -6,37 +6,26 @@ import net.minecraft.client.gl.PostEffectProcessor;
 import net.minecraft.util.Identifier;
 
 import java.io.IOException;
+import java.util.Map;
 
 public class ShaderRenderer {
     public static MinecraftClient client = MinecraftClient.getInstance();
-    public static PostEffectProcessor shader;
-    public static boolean postShaderEnabled = false;
-
-    private static PostEffectProcessor getShader(String id) {
-        try {
-            return new PostEffectProcessor(client.getTextureManager(), client.getResourceManager(), client.getFramebuffer(), new Identifier("shaders/post/" + id +".json"));
-        } catch (IOException e) {
-            return null;
-
-        }
-    }
 
     public static void set(String id, Boolean enabled){
-        if(shader != null)
-            shader.close();
+        Map.Entry<PostEffectProcessor, Boolean> entry = ShaderList.postShaderList.get(id).entrySet().iterator().next();
+        PostEffectProcessor shader = entry.getKey();
 
-        shader = getShader(id);
         if (shader == null) {
-            ShaderAPI.LOGGER.error("Shader is null");
+            ShaderAPI.LOGGER.error("postEffectProcessor is null");
             return;
         }
 
         if(enabled) {
             shader.setupDimensions(client.getWindow().getFramebufferWidth(), client.getWindow().getFramebufferHeight());
-            postShaderEnabled = true;
+            ShaderList.postShaderList.get(id).entrySet().iterator().next().setValue(true);
         } else {
             shader.close();
-            postShaderEnabled = false;
+            ShaderList.postShaderList.get(id).entrySet().iterator().next().setValue(false);
         }
         return;
 
