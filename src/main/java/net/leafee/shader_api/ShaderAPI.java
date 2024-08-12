@@ -4,17 +4,13 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.leafee.shader_api.shader.ShaderList;
 import net.leafee.shader_api.shader.ShaderRenderer;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gl.PostEffectProcessor;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
 
 public class ShaderAPI implements ModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger("shader_api");
@@ -29,13 +25,20 @@ public class ShaderAPI implements ModInitializer {
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			if (client.player != null) {
 				if (toggleKey.wasPressed()) {
+
+					ShaderList.postShaderList.clear();
+					ShaderList.registerPostShader("blobs2");
+					ShaderList.registerPostShader("neurosis");
+					LOGGER.info(String.valueOf(ShaderList.postShaderList));
+
+
 					if (ShaderRenderer.postShaderEnabled) {
 						ShaderRenderer.shader.close();
 						ShaderRenderer.postShaderEnabled = false;
 					} else {
 						ShaderRenderer.postShaderEnabled = true;
+						ShaderRenderer.set("neurosis", true);
 						ShaderRenderer.set("blobs2", true);
-						ShaderRenderer.set2("neurosis", true);
 						LOGGER.info("toggled post shader");
 					}
 

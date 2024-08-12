@@ -10,7 +10,6 @@ import java.io.IOException;
 public class ShaderRenderer {
     public static MinecraftClient client = MinecraftClient.getInstance();
     public static PostEffectProcessor shader;
-    public static PostEffectProcessor shader2;
     public static boolean postShaderEnabled = false;
 
     private static PostEffectProcessor getShader(String id) {
@@ -37,26 +36,6 @@ public class ShaderRenderer {
             postShaderEnabled = true;
         } else {
             shader.close();
-            postShaderEnabled = false;
-        }
-        return;
-
-    }
-    public static void set2(String id, Boolean enabled){
-        if(shader2 != null)
-            shader2.close();
-
-        shader2 = getShader(id);
-        if (shader2 == null) {
-            ShaderAPI.LOGGER.error("Shader is null2");
-            return;
-        }
-
-        if(enabled) {
-            shader2.setupDimensions(client.getWindow().getFramebufferWidth(), client.getWindow().getFramebufferHeight());
-            postShaderEnabled = true;
-        } else {
-            shader2.close();
             postShaderEnabled = false;
         }
         return;

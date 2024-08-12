@@ -19,11 +19,5 @@ public abstract class GameRendererMixin {
             RenderSystem.resetTextureMatrix();
             ShaderRenderer.shader.render(ShaderRenderer.client.getTickDelta());
         }
-        if(ShaderRenderer.postShaderEnabled && ShaderRenderer.shader2 != null) {
-            RenderSystem.disableBlend();
-            RenderSystem.disableDepthTest();
-            RenderSystem.resetTextureMatrix();
-            ShaderRenderer.shader2.render(ShaderRenderer.client.getTickDelta());
-        }
     }
 }

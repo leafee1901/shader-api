@@ -1,20 +1,28 @@
 package net.leafee.shader_api.shader;
 
-import net.minecraft.text.Text;
+import net.minecraft.client.gl.PostEffectProcessor;
 import net.minecraft.util.Identifier;
 
-public enum ShaderList {
-    DISABLED("disabled");
+import java.io.IOException;
+import java.util.HashMap;
+
+public class ShaderList {
+    public static HashMap<String, HashMap<PostEffectProcessor, Boolean>> postShaderList = new HashMap<String, HashMap<PostEffectProcessor, Boolean>>();
 
 
-    private final String id;
-
-    ShaderList(String id) {
-        this.id = id;
+    public static void registerPostShader(String id) {
+        postShaderList.put(id, new HashMap<PostEffectProcessor, Boolean>());
+        postShaderList.get(id).put(createPostShader(id), false);
     }
 
-    public Identifier getPath() {
-        return new Identifier("shaders/post/" + this.id + ".json");
+
+    public static PostEffectProcessor createPostShader(String id) {
+        try {
+            return new PostEffectProcessor(ShaderRenderer.client.getTextureManager(), ShaderRenderer.client.getResourceManager(), ShaderRenderer.client.getFramebuffer(), new Identifier("shaders/post/" + id +".json"));
+        } catch (IOException e) {
+            return null;
+
+        }
     }
 
 }
