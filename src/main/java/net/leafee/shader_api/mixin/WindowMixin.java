@@ -1,6 +1,6 @@
 package net.leafee.shader_api.mixin;
 
-import net.leafee.shader_api.ShaderAPI;
+import net.leafee.shader_api.shader.ShaderRenderer;
 import net.minecraft.client.util.Window;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -12,7 +12,7 @@ public class WindowMixin {
 
     @Inject(at = @At("TAIL"), method = "onFramebufferSizeChanged")
     private void updateShaderSize(CallbackInfo ci) {
-        if(ShaderAPI.postShaderEnabled)
-            ShaderAPI.shader.setupDimensions(ShaderAPI.client.getWindow().getFramebufferWidth(), ShaderAPI.client.getWindow().getFramebufferHeight());
+        if(ShaderRenderer.postShaderEnabled)
+            ShaderRenderer.shader.setupDimensions(ShaderRenderer.client.getWindow().getFramebufferWidth(), ShaderRenderer.client.getWindow().getFramebufferHeight());
     }
 }
