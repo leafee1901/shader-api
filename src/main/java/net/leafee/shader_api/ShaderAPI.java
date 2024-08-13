@@ -1,44 +1,46 @@
 package net.leafee.shader_api;
 
+import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.leafee.shader_api.shader.ShaderList;
 import net.leafee.shader_api.shader.ShaderRenderer;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gl.PostEffectProcessor;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
 
-public class ShaderAPI implements ModInitializer {
+public class ShaderAPI implements ClientModInitializer {
     public static final Logger LOGGER = LoggerFactory.getLogger("shader_api");
 
-	//blobs2 = id:2, name:blobs2
-
 	@Override
-	public void onInitialize() {
+	public void onInitializeClient() {
 
-		KeyBinding toggleKey = KeyBindingHelper.registerKeyBinding(new KeyBinding("toggle", InputUtil.GLFW_KEY_F7, "shader api"));
+		ShaderList.registerPostShader("blobs2");
+		ShaderList.registerPostShader("neurosis");
+		ShaderList.registerPostShader("sdajasdasd");
+
+		KeyBinding neurosisKey = KeyBindingHelper.registerKeyBinding(new KeyBinding("neurosis", InputUtil.GLFW_KEY_F6, "shader api"));
+		KeyBinding blobs2Key = KeyBindingHelper.registerKeyBinding(new KeyBinding("blobs2", InputUtil.GLFW_KEY_F7, "shader api"));
+		KeyBinding disableAllKey = KeyBindingHelper.registerKeyBinding(new KeyBinding("disableAll", InputUtil.GLFW_KEY_F8, "shader api"));
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			if (client.player != null) {
-				if (toggleKey.wasPressed()) {
-					if (ShaderRenderer.postShaderEnabled) {
-						ShaderRenderer.shader.close();
-						ShaderRenderer.postShaderEnabled = false;
-					} else {
-						ShaderRenderer.postShaderEnabled = true;
-						ShaderRenderer.set("blobs2", true);
-						ShaderRenderer.set2("neurosis", true);
-						LOGGER.info("toggled post shader");
-					}
+				if (neurosisKey.wasPressed()) {
+					ShaderRenderer.toggle("neurosis");
+					ShaderRenderer.toggle("dasdkoaw");
+				}
 
+				if (blobs2Key.wasPressed()) {
+					ShaderRenderer.toggle("sdajasdasd");
+					ShaderRenderer.toggle("blobs2");
+				}
+
+				if (disableAllKey.wasPressed()) {
+					ShaderRenderer.disableAll();
 				}
 			}
 		});

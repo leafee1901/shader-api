@@ -13,7 +13,7 @@ out vec4 fragColor;
 
 
 vec3 posterize(vec3 rgb) {
-    vec3 steps = vec3(3);
+    vec3 steps = vec3(12);
     return vec3(round(rgb * steps) / steps);
 }
 
