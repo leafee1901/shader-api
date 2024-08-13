@@ -18,10 +18,9 @@ public class ShaderAPI implements ClientModInitializer {
 
 	@Override
 	public void onInitializeClient() {
-
+		/*
 		ShaderList.registerPostShader("blobs2");
 		ShaderList.registerPostShader("neurosis");
-		ShaderList.registerPostShader("sdajasdasd");
 
 		KeyBinding neurosisKey = KeyBindingHelper.registerKeyBinding(new KeyBinding("neurosis", InputUtil.GLFW_KEY_F6, "shader api"));
 		KeyBinding blobs2Key = KeyBindingHelper.registerKeyBinding(new KeyBinding("blobs2", InputUtil.GLFW_KEY_F7, "shader api"));
@@ -31,11 +30,9 @@ public class ShaderAPI implements ClientModInitializer {
 			if (client.player != null) {
 				if (neurosisKey.wasPressed()) {
 					ShaderRenderer.toggle("neurosis");
-					ShaderRenderer.toggle("dasdkoaw");
 				}
 
 				if (blobs2Key.wasPressed()) {
-					ShaderRenderer.toggle("sdajasdasd");
 					ShaderRenderer.toggle("blobs2");
 				}
 
@@ -44,6 +41,7 @@ public class ShaderAPI implements ClientModInitializer {
 				}
 			}
 		});
+		*/
 	}
 
 }
