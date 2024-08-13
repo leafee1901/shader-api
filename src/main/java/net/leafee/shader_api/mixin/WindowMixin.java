@@ -19,9 +19,9 @@ public class WindowMixin {
     @Inject(at = @At("TAIL"), method = "onFramebufferSizeChanged")
     private void updateShaderSize(CallbackInfo ci) {
         for (Map.Entry<String, HashMap<PostEffectProcessor, Boolean>> entry : ShaderList.postShaderList.entrySet()) {
-            PostEffectProcessor shader = entry.getValue().entrySet().iterator().next().getKey();
-            Boolean isEnabled = entry.getValue().entrySet().iterator().next().getValue();
-            if (isEnabled) {
+            String id = entry.getKey();
+            PostEffectProcessor shader = ShaderRenderer.getShader(id);
+            if (ShaderRenderer.isEnabled(id)) {
                 RenderSystem.disableBlend();
                 RenderSystem.disableDepthTest();
                 RenderSystem.resetTextureMatrix();

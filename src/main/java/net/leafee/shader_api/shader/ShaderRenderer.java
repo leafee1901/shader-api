@@ -9,21 +9,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ShaderRenderer {
-    public static MinecraftClient client = MinecraftClient.getInstance();
-    public static Boolean hasRegistered = false;
+    public static final MinecraftClient client = MinecraftClient.getInstance();
+    private static Boolean hasRegistered = false;
 
     public static void set(String id, Boolean enabled){
-        if (!ShaderRenderer.hasRegistered) {
-            ShaderList.finalizeRegisterPostShader();
+        finalizeRegistering();
+        PostEffectProcessor shader = null;
+        try {
+            Map.Entry<PostEffectProcessor, Boolean> entry = ShaderList.postShaderList.get(id).entrySet().iterator().next();
+            shader = entry.getKey();
+        } catch(NullPointerException e){
+            ShaderAPI.LOGGER.warn("INVALID ID:" + id + ", NullPointerException: " + e);
         }
-
-        ShaderAPI.LOGGER.info(String.valueOf(hasRegistered));
-
-        Map.Entry<PostEffectProcessor, Boolean> entry = ShaderList.postShaderList.get(id).entrySet().iterator().next();
-        PostEffectProcessor shader = entry.getKey();
-
+        
         if (shader == null) {
-            ShaderAPI.LOGGER.error("postEffectProcessor is null");
+            ShaderAPI.LOGGER.error(id + "postEffectProcessor is null");
             return;
         }
 
@@ -31,25 +31,52 @@ public class ShaderRenderer {
             shader.setupDimensions(client.getWindow().getFramebufferWidth(), client.getWindow().getFramebufferHeight());
             ShaderList.postShaderList.get(id).entrySet().iterator().next().setValue(true);
         } else {
-            shader.close();
             ShaderList.postShaderList.get(id).entrySet().iterator().next().setValue(false);
         }
         return;
 
     }
 
+
     public static void disableAll() {
+        finalizeRegistering();
+
         for (Map.Entry<String, HashMap<PostEffectProcessor, Boolean>> entry : ShaderList.postShaderList.entrySet()) {
             set(entry.getKey(), false);
         }
     }
 
-    public static void register() {
-        ShaderList.finalizeRegisterPostShader();
-        hasRegistered = true;
-    }
 
     public static Boolean isEnabled(String id) {
-        return ShaderList.postShaderList.get(id).entrySet().iterator().next().getValue();
+        finalizeRegistering();
+        try {
+            return ShaderList.postShaderList.get(id).entrySet().iterator().next().getValue();
+        } catch (NullPointerException e) {
+            ShaderAPI.LOGGER.warn("Cannot check if shader is enabled!, INVALID ID:" + id + "NullPointerException: " + e);
+        }
+        return false;
+    }
+
+    public static PostEffectProcessor getShader(String id) {
+        finalizeRegistering();
+        try {
+            return ShaderList.postShaderList.get(id).entrySet().iterator().next().getKey();
+        } catch (NullPointerException e) {
+            ShaderAPI.LOGGER.warn("Cannot get shader!, INVALID ID:" + id + "NullPointerException: " + e);
+        }
+        return null;
+    }
+
+
+    public static void toggle(String id) {
+        set(id, !isEnabled(id));
+    }
+
+
+    private static void finalizeRegistering() {
+        if (!ShaderRenderer.hasRegistered) {
+            ShaderList.finalizeRegisterPostShader();
+            hasRegistered = true;
+        }
     }
 }

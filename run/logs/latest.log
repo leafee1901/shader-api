@@ -1,5 +1,5 @@
-[14:03:12] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.20.1 with Fabric Loader 0.15.11
-[14:03:12] [main/INFO] (FabricLoader) Loading 59 mods:
+[09:39:00] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.20.1 with Fabric Loader 0.15.11
+[09:39:00] [main/INFO] (FabricLoader) Loading 59 mods:
 	- fabric-api 0.92.2+1.20.1
 	- fabric-api-base 0.4.31+1802ada577
 	- fabric-api-lookup-api-v1 1.6.36+1802ada577
@@ -59,13 +59,14 @@
 	- minecraft 1.20.1
 	- mixinextras 0.3.5
 	- shader_api 1.0.0
-[14:03:13] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=file:/C:/Users/Lauralie%20et%20Benjamin/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.13.3+mixin.0.8.5/9527e6b0d2449408958fd1302594dc65ec5ade9c/sponge-mixin-0.13.3+mixin.0.8.5.jar Service=Knot/Fabric Env=CLIENT
-[14:03:13] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
-[14:03:13] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
-[14:03:16] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.3.5).
-[14:03:26] [Datafixer Bootstrap/INFO] (Minecraft) 188 Datafixer optimizations took 409 milliseconds
-[14:03:31] [Render thread/INFO] (Minecraft) Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[14:03:32] [Render thread/ERROR] (Minecraft) Failed to verify authentication
+[09:39:01] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=file:/C:/Users/Lauralie%20et%20Benjamin/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.13.3+mixin.0.8.5/9527e6b0d2449408958fd1302594dc65ec5ade9c/sponge-mixin-0.13.3+mixin.0.8.5.jar Service=Knot/Fabric Env=CLIENT
+[09:39:01] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
+[09:39:01] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_16
+[09:39:01] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
+[09:39:04] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.3.5).
+[09:39:13] [Datafixer Bootstrap/INFO] (Minecraft) 188 Datafixer optimizations took 267 milliseconds
+[09:39:18] [Render thread/INFO] (Minecraft) Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[09:39:19] [Render thread/ERROR] (Minecraft) Failed to verify authentication
 com.mojang.authlib.exceptions.InvalidCredentialsException: Status: 401
 	at com.mojang.authlib.exceptions.MinecraftClientHttpException.toAuthenticationException(MinecraftClientHttpException.java:56) ~[authlib-4.0.43.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:156) ~[authlib-4.0.43.jar:?]
@@ -83,193 +84,110 @@ Caused by: com.mojang.authlib.exceptions.MinecraftClientHttpException: Status: 4
 	at com.mojang.authlib.minecraft.client.MinecraftClient.get(MinecraftClient.java:48) ~[authlib-4.0.43.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:129) ~[authlib-4.0.43.jar:?]
 	... 9 more
-[14:03:32] [Render thread/INFO] (Minecraft) Setting user: Player212
-[14:03:32] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
-[14:03:33] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.2-snapshot
-[14:03:36] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric (fabric-block-api-v1, fabric-screen-api-v1, fabric-mining-level-api-v1, fabric-convention-tags-v1, fabric-renderer-indigo, fabric-recipe-api-v1, fabric-renderer-registries-v1, fabric-rendering-v1, fabric-client-tags-api-v1, fabric-commands-v0, fabric-events-lifecycle-v0, fabric-object-builder-api-v1, shader_api, fabric-content-registries-v0, fabric-renderer-api-v1, fabric-dimensions-v1, fabric-loot-tables-v1, fabric-screen-handler-api-v1, fabric-message-api-v1, fabric-networking-v0, fabric-transfer-api-v1, fabric-crash-report-info-v1, fabric-networking-api-v1, fabric-resource-loader-v0, fabric-rendering-v0, fabric-data-attachment-api-v1, fabric-loot-api-v2, fabric-keybindings-v0, fabric-rendering-data-attachment-v1, fabric-item-group-api-v1, fabric-lifecycle-events-v1, fabric-blockrenderlayer-v1, fabric-particles-v1, fabric-rendering-fluids-v1, fabric-api-base, fabric-api, fabric-api-lookup-api-v1, fabric-sound-api-v1, fabric-resource-conditions-api-v1, fabric-registry-sync-v0, fabric-containers-v0, fabric-command-api-v2, fabric-key-binding-api-v1, fabric-biome-api-v1, fabric-item-api-v1, fabric-gametest-api-v1, fabric-entity-events-v1, fabric-events-interaction-v0, fabric-data-generation-api-v1, fabric-command-api-v1, fabric-game-rule-api-v1, fabric-model-loading-api-v1, fabric-block-view-api-v2, fabric-models-v0, fabric-transitive-access-wideners-v1, fabricloader)
-[14:03:37] [Worker-Main-1/INFO] (Minecraft) Found unifont_all_no_pua-15.0.06.hex, loading
-[14:03:38] [Realms Notification Availability checker #1/INFO] (Minecraft) Could not authorize you against Realms server: Invalid session id
-[14:03:40] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
-[14:03:40] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[14:03:40] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on Haut-parleurs (Logi USB Headset)
-[14:03:40] [Render thread/INFO] (Minecraft) Sound engine started
-[14:03:40] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
-[14:03:40] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
-[14:03:40] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[14:03:40] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[14:03:40] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
-[14:03:40] [Render thread/INFO] (Minecraft) Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
-[14:03:40] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[14:03:40] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[14:03:40] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[14:03:41] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[14:03:41] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
-[14:03:42] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[14:03:42] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[14:03:46] [Thread-4/INFO] (Minecraft) OpenGL debug message: id=1280, source=API, type=ERROR, severity=HIGH, message='GL_INVALID_ENUM error generated. Operation is not valid from the core profile.'
-[14:03:51] [Render thread/INFO] (Minecraft) Loaded 7 recipes
-[14:03:52] [Render thread/INFO] (Minecraft) Loaded 1271 advancements
-[14:03:52] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 64 new biomes in 4.462 ms
-[14:03:52] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.20.1
-[14:03:52] [Server thread/INFO] (Minecraft) Generating keypair
-[14:03:53] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
-[14:03:56] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[14:03:56] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[14:03:56] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[14:03:56] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[14:03:56] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[14:03:56] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[14:03:56] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[14:03:57] [Render thread/INFO] (Minecraft) Preparing spawn area: 1%
-[14:03:57] [Render thread/INFO] (Minecraft) Preparing spawn area: 78%
-[14:03:58] [Render thread/INFO] (Minecraft) Time elapsed: 4746 ms
-[14:03:58] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
-[14:03:58] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
-[14:04:01] [Server thread/INFO] (Minecraft) Player212[local:E:7505c260] logged in with entity id 131 at (51.645024547169115, -56.0, 52.38398079977132)
-[14:04:01] [Server thread/INFO] (Minecraft) Player212 joined the game
-[14:04:01] [Server thread/INFO] (Minecraft) Player212 has made the advancement [Suit Up]
-[14:04:05] [Render thread/INFO] (Minecraft) [System] [CHAT] Player212 has made the advancement [Suit Up]
-[14:04:05] [Render thread/INFO] (Minecraft) Loaded 17 advancements
-[14:04:09] [Render thread/INFO] (shader_api) false
-[14:04:10] [Render thread/INFO] (shader_api) false
-[14:04:10] [Render thread/INFO] (shader_api) enable
-[14:04:11] [Render thread/INFO] (shader_api) false
-[14:04:12] [Render thread/INFO] (shader_api) false
-[14:04:12] [Render thread/INFO] (shader_api) false
-[14:04:12] [Render thread/INFO] (shader_api) enable
-[14:04:13] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[14:04:13] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[14:04:13] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[14:04:13] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[14:04:28] [Render thread/INFO] (shader_api) false
-[14:04:49] [Render thread/INFO] (shader_api) false
-[14:04:49] [Render thread/INFO] (shader_api) enable
-[14:04:49] [Render thread/INFO] (shader_api) false
-[14:04:51] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[14:04:51] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[14:04:51] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[14:04:51] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[14:04:55] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[14:04:55] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[14:04:55] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[14:04:55] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[14:05:05] [Render thread/INFO] (Minecraft) Loaded 34 advancements
-[14:05:12] [Render thread/INFO] (Minecraft) Loaded 35 advancements
-[14:05:18] [Render thread/INFO] (Minecraft) Loaded 35 advancements
-[14:05:21] [Render thread/INFO] (Minecraft) Loaded 38 advancements
-[14:05:35] [Render thread/INFO] (Minecraft) Loaded 39 advancements
-[14:05:40] [Render thread/INFO] (Minecraft) Loaded 48 advancements
-[14:05:41] [Server thread/INFO] (Minecraft) Player212 has made the advancement [What a Deal!]
-[14:05:41] [Render thread/INFO] (Minecraft) [System] [CHAT] Player212 has made the advancement [What a Deal!]
-[14:05:41] [Render thread/INFO] (Minecraft) Loaded 52 advancements
-[14:06:08] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[14:06:08] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[14:06:09] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[14:06:09] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[14:06:11] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[14:06:11] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[14:06:11] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[14:06:11] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[14:06:27] [Render thread/INFO] (shader_api) false
-[14:06:27] [Render thread/INFO] (shader_api) enable
-[14:06:29] [Render thread/INFO] (shader_api) false
-[14:06:29] [Render thread/INFO] (shader_api) false
-[14:06:29] [Render thread/INFO] (shader_api) false
-[14:06:34] [Render thread/INFO] (shader_api) false
-[14:06:38] [Render thread/INFO] (shader_api) false
-[14:06:38] [Render thread/INFO] (shader_api) false
-[14:06:39] [Render thread/INFO] (shader_api) false
-[14:06:53] [Server thread/INFO] (Minecraft) [Not Secure] <Player212> I have max frames??
-[14:06:53] [Render thread/INFO] (Minecraft) [CHAT] <Player212> I have max frames??
-[14:06:54] [Server thread/INFO] (Minecraft) [Not Secure] <Player212> wdm
-[14:06:54] [Render thread/INFO] (Minecraft) [CHAT] <Player212> wdm
-[14:06:57] [Render thread/INFO] (shader_api) false
-[14:06:57] [Render thread/INFO] (shader_api) enable
-[14:07:04] [Render thread/INFO] (shader_api) false
-[14:07:09] [Render thread/INFO] (shader_api) false
-[14:07:09] [Render thread/INFO] (shader_api) enable
-[14:07:26] [Render thread/INFO] (shader_api) false
-[14:07:26] [Render thread/INFO] (shader_api) enable
-[14:07:26] [Render thread/INFO] (shader_api) false
-[14:07:32] [Render thread/INFO] (shader_api) false
-[14:07:32] [Render thread/INFO] (shader_api) false
-[14:07:35] [Render thread/INFO] (shader_api) false
-[14:07:35] [Render thread/INFO] (shader_api) enable
-[14:07:53] [Render thread/INFO] (Minecraft) Loaded 55 advancements
-[14:07:59] [Render thread/INFO] (Minecraft) Loaded 66 advancements
-[14:08:01] [Render thread/INFO] (Minecraft) Loaded 66 advancements
-[14:08:01] [Render thread/INFO] (Minecraft) Loaded 74 advancements
-[14:08:09] [Render thread/INFO] (Minecraft) Loaded 98 advancements
-[14:08:10] [Server thread/INFO] (Minecraft) Player212 has made the advancement [Acquire Hardware]
-[14:08:10] [Render thread/INFO] (Minecraft) [System] [CHAT] Player212 has made the advancement [Acquire Hardware]
-[14:08:10] [Render thread/INFO] (Minecraft) Loaded 125 advancements
-[14:08:19] [Render thread/INFO] (Minecraft) Loaded 128 advancements
-[14:08:27] [Render thread/INFO] (Minecraft) [System] [CHAT] Saved screenshot as 2024-08-12_14.08.26.png
-[14:08:37] [Render thread/INFO] (Minecraft) [System] [CHAT] Saved screenshot as 2024-08-12_14.08.37.png
-[14:08:42] [Render thread/INFO] (Minecraft) [System] [CHAT] Saved screenshot as 2024-08-12_14.08.41.png
-[14:09:04] [Render thread/INFO] (Minecraft) [System] [CHAT] Saved screenshot as 2024-08-12_14.09.04.png
-[14:09:08] [Server thread/INFO] (Minecraft) Player212 has made the advancement [Stone Age]
-[14:09:08] [Render thread/INFO] (Minecraft) [System] [CHAT] Player212 has made the advancement [Stone Age]
-[14:09:08] [Render thread/INFO] (Minecraft) Loaded 142 advancements
-[14:09:25] [Server thread/INFO] (Minecraft) Player212 has made the advancement [Getting an Upgrade]
-[14:09:25] [Render thread/INFO] (Minecraft) [System] [CHAT] Player212 has made the advancement [Getting an Upgrade]
-[14:09:25] [Render thread/INFO] (Minecraft) Loaded 143 advancements
-[14:09:29] [Render thread/INFO] (Minecraft) [System] [CHAT] Respawn point set
-[14:09:42] [Server thread/INFO] (Minecraft) [Not Secure] <Player212> not really
-[14:09:42] [Render thread/INFO] (Minecraft) [CHAT] <Player212> not really
-[14:09:49] [Server thread/INFO] (Minecraft) [Not Secure] <Player212> Im trying a shader api I'm making
-[14:09:49] [Render thread/INFO] (Minecraft) [CHAT] <Player212> Im trying a shader api I'm making
-[14:10:33] [Render thread/INFO] (Minecraft) Loaded 144 advancements
-[14:10:59] [Server thread/INFO] (Minecraft) Player212 has made the advancement [Hot Stuff]
-[14:10:59] [Render thread/INFO] (Minecraft) [System] [CHAT] Player212 has made the advancement [Hot Stuff]
-[14:10:59] [Render thread/INFO] (Minecraft) Loaded 145 advancements
-[14:11:03] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[14:11:03] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[14:11:03] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[14:11:03] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[14:11:46] [Server thread/INFO] (Minecraft) Player212 has made the advancement [Monster Hunter]
-[14:11:46] [Render thread/INFO] (Minecraft) [System] [CHAT] Player212 has made the advancement [Monster Hunter]
-[14:11:46] [Render thread/INFO] (Minecraft) Loaded 148 advancements
-[14:11:58] [Server thread/INFO] (Minecraft) [Not Secure] <Player212> yea
-[14:11:58] [Render thread/INFO] (Minecraft) [CHAT] <Player212> yea
-[14:12:08] [Render thread/INFO] (Minecraft) Loaded 148 advancements
-[14:12:43] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[14:12:43] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[14:12:43] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[14:12:43] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[14:13:03] [Render thread/INFO] (Minecraft) Loaded 148 advancements
-[14:13:03] [Render thread/INFO] (Minecraft) Loaded 149 advancements
-[14:13:40] [Render thread/INFO] (Minecraft) Loaded 149 advancements
-[14:13:41] [Render thread/INFO] (Minecraft) Loaded 150 advancements
-[14:13:58] [Server thread/INFO] (Minecraft) Player212 has made the advancement [Sweet Dreams]
-[14:13:58] [Render thread/INFO] (Minecraft) [System] [CHAT] Respawn point set
-[14:13:58] [Render thread/INFO] (Minecraft) [System] [CHAT] Player212 has made the advancement [Sweet Dreams]
-[14:13:58] [Render thread/INFO] (Minecraft) Loaded 150 advancements
-[14:14:04] [Render thread/INFO] (shader_api) false
-[14:14:19] [Server thread/INFO] (Minecraft) Villager VillagerEntity['Nitwit'/43, l='ServerLevel[New World]', x=76.75, y=-59.00, z=16.54] died, message: 'Nitwit was slain by Zombie'
-[14:14:19] [Render thread/INFO] (Minecraft) Villager VillagerEntity['Nitwit'/43, l='ClientLevel', x=77.66, y=-59.00, z=16.69] died, message: 'Nitwit died'
-[14:14:50] [Render thread/INFO] (Minecraft) Loaded 150 advancements
-[14:15:18] [Render thread/INFO] (Minecraft) Loaded 150 advancements
-[14:15:27] [Render thread/INFO] (Minecraft) Loaded 151 advancements
-[14:16:35] [Server thread/INFO] (Minecraft) Player212 has made the advancement [Fishy Business]
-[14:16:35] [Render thread/INFO] (Minecraft) [System] [CHAT] Player212 has made the advancement [Fishy Business]
-[14:16:35] [Render thread/INFO] (Minecraft) Loaded 152 advancements
-[14:16:36] [Render thread/INFO] (Minecraft) Loaded 155 advancements
-[14:16:36] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[14:16:36] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[14:16:36] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[14:16:36] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[14:16:37] [Server thread/INFO] (Minecraft) Player212 lost connection: Disconnected
-[14:16:37] [Server thread/INFO] (Minecraft) Player212 left the game
-[14:16:37] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
-[14:16:37] [Server thread/INFO] (Minecraft) Stopping server
-[14:16:37] [Server thread/INFO] (Minecraft) Saving players
-[14:16:37] [Server thread/INFO] (Minecraft) Saving worlds
-[14:16:37] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[14:16:38] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[14:16:38] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[14:16:38] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (New World): All chunks are saved
-[14:16:38] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[14:16:38] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[14:16:38] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
-[14:16:39] [Render thread/INFO] (Minecraft) Stopping!
+[09:39:19] [Render thread/INFO] (Minecraft) Setting user: Player334
+[09:39:19] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
+[09:39:20] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.1 SNAPSHOT
+[09:39:23] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric (fabric-client-tags-api-v1, fabric-api-lookup-api-v1, fabric-events-lifecycle-v0, fabric-object-builder-api-v1, fabric-commands-v0, fabric-sound-api-v1, fabric-lifecycle-events-v1, fabric-recipe-api-v1, fabric-keybindings-v0, shader_api, fabric-resource-loader-v0, fabric-api, fabric-rendering-v1, fabric-containers-v0, fabric-key-binding-api-v1, fabric-data-generation-api-v1, fabric-registry-sync-v0, fabric-renderer-indigo, fabric-data-attachment-api-v1, fabric-message-api-v1, fabricloader, fabric-block-api-v1, fabric-entity-events-v1, fabric-screen-api-v1, fabric-command-api-v2, fabric-item-api-v1, fabric-transfer-api-v1, fabric-gametest-api-v1, fabric-models-v0, fabric-content-registries-v0, fabric-block-view-api-v2, fabric-events-interaction-v0, fabric-renderer-registries-v1, fabric-rendering-v0, fabric-mining-level-api-v1, fabric-rendering-fluids-v1, fabric-api-base, fabric-command-api-v1, fabric-screen-handler-api-v1, fabric-item-group-api-v1, fabric-biome-api-v1, fabric-convention-tags-v1, fabric-resource-conditions-api-v1, fabric-blockrenderlayer-v1, fabric-networking-api-v1, fabric-crash-report-info-v1, fabric-transitive-access-wideners-v1, fabric-model-loading-api-v1, fabric-loot-tables-v1, fabric-particles-v1, fabric-networking-v0, fabric-rendering-data-attachment-v1, fabric-renderer-api-v1, fabric-dimensions-v1, fabric-game-rule-api-v1, fabric-loot-api-v2)
+[09:39:23] [Worker-Main-3/INFO] (Minecraft) Found unifont_all_no_pua-15.0.06.hex, loading
+[09:39:24] [Realms Notification Availability checker #1/INFO] (Minecraft) Could not authorize you against Realms server: Invalid session id
+[09:39:25] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
+[09:39:25] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[09:39:25] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on Haut-parleurs (Logi USB Headset)
+[09:39:25] [Render thread/INFO] (Minecraft) Sound engine started
+[09:39:26] [Render thread/INFO] (Minecraft) Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[09:39:26] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[09:39:26] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[09:39:26] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[09:39:26] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[09:39:26] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[09:39:26] [Render thread/INFO] (Minecraft) Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[09:39:26] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[09:39:26] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[09:39:26] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[09:39:27] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[09:39:27] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[09:39:27] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[09:39:33] [Render thread/INFO] (Minecraft) Loaded 7 recipes
+[09:39:34] [Render thread/INFO] (Minecraft) Loaded 1271 advancements
+[09:39:34] [Render thread/INFO] (BiomeModificationImpl) Applied 0 biome modifications to 0 of 64 new biomes in 3.987 ms
+[09:39:34] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.20.1
+[09:39:34] [Server thread/INFO] (Minecraft) Generating keypair
+[09:39:35] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
+[09:39:37] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[09:39:37] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[09:39:37] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[09:39:37] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[09:39:37] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[09:39:37] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[09:39:38] [Render thread/INFO] (Minecraft) Preparing spawn area: 16%
+[09:39:39] [Render thread/INFO] (Minecraft) Time elapsed: 3846 ms
+[09:39:39] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
+[09:39:39] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
+[09:39:41] [Server thread/INFO] (Minecraft) Player334[local:E:dfe41dc4] logged in with entity id 111 at (51.70975465580329, -55.0, 53.70528037159753)
+[09:39:41] [Server thread/INFO] (Minecraft) Player334 joined the game
+[09:39:42] [Server thread/INFO] (Minecraft) Player334 has made the advancement [Suit Up]
+[09:39:42] [Server thread/INFO] (Minecraft) Player334 has made the advancement [Stone Age]
+[09:39:42] [Server thread/INFO] (Minecraft) Player334 has made the advancement [Acquire Hardware]
+[09:39:42] [Server thread/INFO] (Minecraft) Player334 has made the advancement [Getting an Upgrade]
+[09:39:43] [Render thread/INFO] (Minecraft) [System] [CHAT] Player334 has made the advancement [Suit Up]
+[09:39:43] [Render thread/INFO] (Minecraft) [System] [CHAT] Player334 has made the advancement [Stone Age]
+[09:39:43] [Render thread/INFO] (Minecraft) [System] [CHAT] Player334 has made the advancement [Acquire Hardware]
+[09:39:43] [Render thread/INFO] (Minecraft) [System] [CHAT] Player334 has made the advancement [Getting an Upgrade]
+[09:39:43] [Render thread/INFO] (Minecraft) Loaded 92 advancements
+[09:39:47] [Render thread/WARN] (shader_api) dasdkoawNullPointerException: java.lang.NullPointerException: Cannot invoke "java.util.HashMap.entrySet()" because the return value of "java.util.HashMap.get(Object)" is null
+[09:39:47] [Render thread/WARN] (shader_api) INVALID ID:dasdkoaw, NullPointerException: java.lang.NullPointerException: Cannot invoke "java.util.HashMap.entrySet()" because the return value of "java.util.HashMap.get(Object)" is null
+[09:39:47] [Render thread/ERROR] (shader_api) dasdkoawpostEffectProcessor is null
+[09:39:47] [Render thread/WARN] (shader_api) dasdkoawNullPointerException: java.lang.NullPointerException: Cannot invoke "java.util.HashMap.entrySet()" because the return value of "java.util.HashMap.get(Object)" is null
+[09:39:47] [Render thread/WARN] (shader_api) INVALID ID:dasdkoaw, NullPointerException: java.lang.NullPointerException: Cannot invoke "java.util.HashMap.entrySet()" because the return value of "java.util.HashMap.get(Object)" is null
+[09:39:47] [Render thread/ERROR] (shader_api) dasdkoawpostEffectProcessor is null
+[09:39:47] [Render thread/ERROR] (shader_api) sdajasdasdpostEffectProcessor is null
+[09:39:48] [Render thread/WARN] (shader_api) dasdkoawNullPointerException: java.lang.NullPointerException: Cannot invoke "java.util.HashMap.entrySet()" because the return value of "java.util.HashMap.get(Object)" is null
+[09:39:48] [Render thread/WARN] (shader_api) INVALID ID:dasdkoaw, NullPointerException: java.lang.NullPointerException: Cannot invoke "java.util.HashMap.entrySet()" because the return value of "java.util.HashMap.get(Object)" is null
+[09:39:48] [Render thread/ERROR] (shader_api) dasdkoawpostEffectProcessor is null
+[09:39:49] [Render thread/WARN] (shader_api) dasdkoawNullPointerException: java.lang.NullPointerException: Cannot invoke "java.util.HashMap.entrySet()" because the return value of "java.util.HashMap.get(Object)" is null
+[09:39:49] [Render thread/WARN] (shader_api) INVALID ID:dasdkoaw, NullPointerException: java.lang.NullPointerException: Cannot invoke "java.util.HashMap.entrySet()" because the return value of "java.util.HashMap.get(Object)" is null
+[09:39:49] [Render thread/ERROR] (shader_api) dasdkoawpostEffectProcessor is null
+[09:39:50] [Render thread/ERROR] (shader_api) sdajasdasdpostEffectProcessor is null
+[09:39:50] [Render thread/ERROR] (shader_api) sdajasdasdpostEffectProcessor is null
+[09:39:51] [Render thread/WARN] (shader_api) dasdkoawNullPointerException: java.lang.NullPointerException: Cannot invoke "java.util.HashMap.entrySet()" because the return value of "java.util.HashMap.get(Object)" is null
+[09:39:51] [Render thread/WARN] (shader_api) INVALID ID:dasdkoaw, NullPointerException: java.lang.NullPointerException: Cannot invoke "java.util.HashMap.entrySet()" because the return value of "java.util.HashMap.get(Object)" is null
+[09:39:51] [Render thread/ERROR] (shader_api) dasdkoawpostEffectProcessor is null
+[09:39:52] [Render thread/WARN] (shader_api) dasdkoawNullPointerException: java.lang.NullPointerException: Cannot invoke "java.util.HashMap.entrySet()" because the return value of "java.util.HashMap.get(Object)" is null
+[09:39:52] [Render thread/WARN] (shader_api) INVALID ID:dasdkoaw, NullPointerException: java.lang.NullPointerException: Cannot invoke "java.util.HashMap.entrySet()" because the return value of "java.util.HashMap.get(Object)" is null
+[09:39:52] [Render thread/ERROR] (shader_api) dasdkoawpostEffectProcessor is null
+[09:39:53] [Render thread/ERROR] (shader_api) sdajasdasdpostEffectProcessor is null
+[09:39:54] [Render thread/ERROR] (shader_api) sdajasdasdpostEffectProcessor is null
+[09:39:55] [Render thread/WARN] (shader_api) dasdkoawNullPointerException: java.lang.NullPointerException: Cannot invoke "java.util.HashMap.entrySet()" because the return value of "java.util.HashMap.get(Object)" is null
+[09:39:55] [Render thread/WARN] (shader_api) INVALID ID:dasdkoaw, NullPointerException: java.lang.NullPointerException: Cannot invoke "java.util.HashMap.entrySet()" because the return value of "java.util.HashMap.get(Object)" is null
+[09:39:55] [Render thread/ERROR] (shader_api) dasdkoawpostEffectProcessor is null
+[09:39:55] [Render thread/ERROR] (shader_api) sdajasdasdpostEffectProcessor is null
+[09:39:56] [Render thread/ERROR] (shader_api) sdajasdasdpostEffectProcessor is null
+[09:39:56] [Render thread/WARN] (shader_api) dasdkoawNullPointerException: java.lang.NullPointerException: Cannot invoke "java.util.HashMap.entrySet()" because the return value of "java.util.HashMap.get(Object)" is null
+[09:39:56] [Render thread/WARN] (shader_api) INVALID ID:dasdkoaw, NullPointerException: java.lang.NullPointerException: Cannot invoke "java.util.HashMap.entrySet()" because the return value of "java.util.HashMap.get(Object)" is null
+[09:39:56] [Render thread/ERROR] (shader_api) dasdkoawpostEffectProcessor is null
+[09:39:56] [Render thread/WARN] (shader_api) dasdkoawNullPointerException: java.lang.NullPointerException: Cannot invoke "java.util.HashMap.entrySet()" because the return value of "java.util.HashMap.get(Object)" is null
+[09:39:56] [Render thread/WARN] (shader_api) INVALID ID:dasdkoaw, NullPointerException: java.lang.NullPointerException: Cannot invoke "java.util.HashMap.entrySet()" because the return value of "java.util.HashMap.get(Object)" is null
+[09:39:56] [Render thread/ERROR] (shader_api) dasdkoawpostEffectProcessor is null
+[09:39:57] [Render thread/WARN] (shader_api) dasdkoawNullPointerException: java.lang.NullPointerException: Cannot invoke "java.util.HashMap.entrySet()" because the return value of "java.util.HashMap.get(Object)" is null
+[09:39:57] [Render thread/WARN] (shader_api) INVALID ID:dasdkoaw, NullPointerException: java.lang.NullPointerException: Cannot invoke "java.util.HashMap.entrySet()" because the return value of "java.util.HashMap.get(Object)" is null
+[09:39:57] [Render thread/ERROR] (shader_api) dasdkoawpostEffectProcessor is null
+[09:39:57] [Render thread/ERROR] (shader_api) sdajasdasdpostEffectProcessor is null
+[09:39:58] [Render thread/ERROR] (shader_api) sdajasdasdpostEffectProcessor is null
+[09:40:07] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[09:40:07] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[09:40:07] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[09:40:07] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[09:40:07] [Server thread/INFO] (Minecraft) Player334 lost connection: Disconnected
+[09:40:07] [Server thread/INFO] (Minecraft) Player334 left the game
+[09:40:07] [Server thread/INFO] (Minecraft) Stopping singleplayer server as player logged out
+[09:40:08] [Server thread/INFO] (Minecraft) Stopping server
+[09:40:08] [Server thread/INFO] (Minecraft) Saving players
+[09:40:08] [Server thread/INFO] (Minecraft) Saving worlds
+[09:40:08] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[09:40:09] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[09:40:09] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[09:40:09] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (New World): All chunks are saved
+[09:40:09] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[09:40:09] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[09:40:09] [Server thread/INFO] (Minecraft) ThreadedAnvilChunkStorage: All dimensions are saved
+[09:40:10] [Render thread/INFO] (Minecraft) Stopping!

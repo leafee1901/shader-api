@@ -16,6 +16,7 @@ public class ShaderList {
         postShaderIdMemory.add(id);
     }
 
+
     public static void finalizeRegisterPostShader() {
         for (String id : postShaderIdMemory) {
             postShaderList.put(id, new HashMap<PostEffectProcessor, Boolean>());
@@ -24,9 +25,7 @@ public class ShaderList {
     }
 
 
-
-
-    public static PostEffectProcessor createPostShader(String id) {
+    private static PostEffectProcessor createPostShader(String id) {
         try {
             return new PostEffectProcessor(ShaderRenderer.client.getTextureManager(), ShaderRenderer.client.getResourceManager(), ShaderRenderer.client.getFramebuffer(), new Identifier("shaders/post/" + id +".json"));
         } catch (IOException e) {
