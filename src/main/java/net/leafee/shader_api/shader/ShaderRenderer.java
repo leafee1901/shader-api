@@ -12,8 +12,27 @@ public class ShaderRenderer {
     public static final MinecraftClient client = MinecraftClient.getInstance();
     private static Boolean hasRegistered = false;
 
+    private static void finalizeRegistering() {
+        if (!ShaderRenderer.hasRegistered) {
+            ShaderList.finalizeRegisterPostShader();
+            hasRegistered = true;
+        }
+    }
+
+    public static void set(String id, int duration){
+        set(id, true, duration);
+    }
+
     public static void set(String id, Boolean enabled){
+        set(id, enabled, -1);
+    }
+
+    public static void set(String id, Boolean enabled, int duration){
         finalizeRegistering();
+        if (duration == -1) {
+            duration = 2147483647;
+        }
+
         PostEffectProcessor shader = null;
         try {
             Map.Entry<PostEffectProcessor, Boolean> entry = ShaderList.postShaderList.get(id).entrySet().iterator().next();
@@ -21,7 +40,7 @@ public class ShaderRenderer {
         } catch(NullPointerException e){
             ShaderAPI.LOGGER.warn("INVALID ID:" + id + ", NullPointerException: " + e);
         }
-        
+
         if (shader == null) {
             ShaderAPI.LOGGER.error(id + "postEffectProcessor is null");
             return;
@@ -30,11 +49,11 @@ public class ShaderRenderer {
         if(enabled) {
             shader.setupDimensions(client.getWindow().getFramebufferWidth(), client.getWindow().getFramebufferHeight());
             ShaderList.postShaderList.get(id).entrySet().iterator().next().setValue(true);
+            ShaderList.postShaderDurationList.replace(id, duration);
         } else {
             ShaderList.postShaderList.get(id).entrySet().iterator().next().setValue(false);
+            ShaderList.postShaderDurationList.replace(id, 0);
         }
-        return;
-
     }
 
 
@@ -46,6 +65,24 @@ public class ShaderRenderer {
         }
     }
 
+
+    public static void toggle(String id) {
+        set(id, !isEnabled(id));
+
+    }
+
+
+
+
+    public static int getDuration(String id) {
+        finalizeRegistering();
+        try {
+            return ShaderList.postShaderDurationList.get(id);
+        } catch (NullPointerException e) {
+            ShaderAPI.LOGGER.warn("Cannot check shader duration!, INVALID ID:" + id + "NullPointerException: " + e);
+        }
+        return 0;
+    }
 
     public static Boolean isEnabled(String id) {
         finalizeRegistering();
@@ -65,18 +102,5 @@ public class ShaderRenderer {
             ShaderAPI.LOGGER.warn("Cannot get shader!, INVALID ID:" + id + "NullPointerException: " + e);
         }
         return null;
-    }
-
-
-    public static void toggle(String id) {
-        set(id, !isEnabled(id));
-    }
-
-
-    private static void finalizeRegistering() {
-        if (!ShaderRenderer.hasRegistered) {
-            ShaderList.finalizeRegisterPostShader();
-            hasRegistered = true;
-        }
     }
 }

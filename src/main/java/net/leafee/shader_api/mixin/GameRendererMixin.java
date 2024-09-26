@@ -1,7 +1,6 @@
 package net.leafee.shader_api.mixin;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.leafee.shader_api.ShaderAPI;
 import net.leafee.shader_api.shader.ShaderList;
 import net.leafee.shader_api.shader.ShaderRenderer;
 import net.minecraft.client.gl.PostEffectProcessor;
@@ -21,8 +20,9 @@ public abstract class GameRendererMixin {
     public void render(CallbackInfo ci) {
         for (Map.Entry<String, HashMap<PostEffectProcessor, Boolean>> entry : ShaderList.postShaderList.entrySet()) {
             String id = entry.getKey();
+
             PostEffectProcessor shader = ShaderRenderer.getShader(id);
-            if (ShaderRenderer.isEnabled(id) && shader != null) {
+            if (ShaderRenderer.isEnabled(id) && shader != null && !(ShaderList.postShaderDurationList.get(id) <= 0)) {
                 RenderSystem.disableBlend();
                 RenderSystem.disableDepthTest();
                 RenderSystem.resetTextureMatrix();

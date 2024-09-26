@@ -15,7 +15,7 @@ reducedDebugInfo:false
 showSubtitles:false
 directionalAudio:false
 touchscreen:false
-fullscreen:true
+fullscreen:false
 bobView:false
 toggleCrouch:false
 toggleSprint:false
@@ -121,6 +121,7 @@ key_key.hotbar.9:key.keyboard.r
 key_neurosis:key.keyboard.f6
 key_blobs2:key.keyboard.f7
 key_disableAll:key.keyboard.f8
+key_blobs2 duration test:key.keyboard.f9
 soundCategory_master:0.2433774834437086
 soundCategory_music:0.0
 soundCategory_record:1.0
