@@ -1,6 +1,5 @@
 package net.leafee.shader_api.shader;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import net.leafee.shader_api.ShaderAPI;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gl.PostEffectProcessor;

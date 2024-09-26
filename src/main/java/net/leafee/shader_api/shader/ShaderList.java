@@ -1,6 +1,5 @@
 package net.leafee.shader_api.shader;
 
-import net.leafee.shader_api.ShaderAPI;
 import net.minecraft.client.gl.PostEffectProcessor;
 import net.minecraft.util.Identifier;
 import java.io.IOException;
