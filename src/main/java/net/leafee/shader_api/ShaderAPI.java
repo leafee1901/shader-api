@@ -57,6 +57,5 @@ public class ShaderAPI implements ClientModInitializer {
 				}
 			}
 		});
-
 	}
 }
